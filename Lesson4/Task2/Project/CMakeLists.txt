@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.21)
+project(DP_L4_T2 VERSION 1.0)
+add_executable(main)
+set_property(TARGET main PROPERTY CXX_STANDARD 20)
+set(CMAKE_BUILD_TYPE Debug)
+
+set(sources ${CMAKE_CURRENT_SOURCE_DIR}/source/main.cpp)
+target_sources(main PRIVATE ${sources})
+add_subdirectory(PrintSave)
+target_link_libraries(main PRIVATE PrintSave)
+install(TARGETS main DESTINATION ${PROJECT_SOURCE_DIR}/install)
