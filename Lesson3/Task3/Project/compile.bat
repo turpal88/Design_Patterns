@@ -1,2 +1,2 @@
-cmake --build build --clean-first --target all
+cmake --build build --clean-first --target install
 pause

@@ -22,12 +22,16 @@ void Logging::get_log(const std::string log_type, const std::string dest){
 	char counter = 0;
 	
 	while(counter <= 3){
-		try{
+		//try{
 			if(log_type == log_message_pointer_vector.at(counter) -> type()) {
 			try{
 				log_message_pointer_vector.at(counter) -> pop_log_info(dest);
 			}catch(std::invalid_argument& e){
 				std::cout << "Exception generated: " << e.what() << std::endl;
+			}
+			catch (std::out_of_range& e) {
+
+					std::cout << "Exception generated: " << e.what() << std::endl;
 			}
 				
 		
@@ -36,10 +40,10 @@ void Logging::get_log(const std::string log_type, const std::string dest){
 		}else if(counter < 3) set_next_handler(counter); 
 		else log_message_pointer_vector.at(3) -> pop_log_info(dest);
 			
-		}catch(std::out_of_range& e){
+	//	}catch(std::out_of_range& e){
 			
-			std::cout << "Exception generated: " << e.what() << std::endl;
-		}
+		//	std::cout << "Exception generated: " << e.what() << std::endl;
+	//	}
 		
 			
 		

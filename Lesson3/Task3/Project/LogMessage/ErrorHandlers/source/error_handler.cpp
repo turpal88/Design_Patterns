@@ -3,24 +3,26 @@
 
 
 WarningLogMessage::WarningLogMessage() {
-	
+	//next_handler = nullptr;
 	_type = "Warning";
 	_message = "Warning occured";
 }
 	
 ErrorLogMessage::ErrorLogMessage() {
-	
+	//next_handler = nullptr;
 	_type = "Error";
 	_message = "Error occured";
 }	
 
 FatalErrorLogMessage::FatalErrorLogMessage() {
+	//next_handler = nullptr;
 	_type = "FatalError";
 	_message = "FatalError occured";
 	
 }	
 
 UnknownMessageLog::UnknownMessageLog() {
+	//next_handler = nullptr;
 	_type = "UnknownMessage";
 	_message = "UnknownMessage occured";
 	
@@ -36,6 +38,11 @@ Type LogMessage::type() {
 std::string LogMessage::message() {
 	return _message;
 }
+
+
+
+
+//void LogMessage::pop_log_info(const std::string dest){}
 
 void WarningLogMessage::pop_log_info(const std::string dest){
 	
