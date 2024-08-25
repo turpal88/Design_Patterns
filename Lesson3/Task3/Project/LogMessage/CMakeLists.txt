@@ -14,7 +14,7 @@ target_sources(LogMessage PRIVATE ${sources})
 
 
 if(BUILD_SHARED_LIBS)
-target_compile_definitions(LogMessage PRIVATE "LOG_MESSAGE_USE_SHARED_LIB")
+target_compile_definitions(LogMessage PUBLIC "LOG_MESSAGE_USE_SHARED_LIB")
 set(export_file_name "log_message_export_shared.h")
 else()
 set(export_file_name "log_message_export_static.h")
@@ -22,7 +22,7 @@ endif()
 
 target_include_directories(LogMessage PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/header ${CMAKE_CURRENT_SOURCE_DIR}/ErrorHandlers/header)
 #include_directories(${CMAKE_CURRENT_SOURCE_DIR}/header ${CMAKE_CURRENT_SOURCE_DIR}/ErrorHandlers/header)
-target_link_libraries(LogMessage PRIVATE ErrorHandlers)
+target_link_libraries(LogMessage PUBLIC ErrorHandlers)
 
 include(GenerateExportHeader)
 generate_export_header(LogMessage

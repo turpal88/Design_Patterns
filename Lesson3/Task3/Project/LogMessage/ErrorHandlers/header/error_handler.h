@@ -18,7 +18,7 @@ protected:
 	public:
 	
 	API_ERROR_HANDLERS virtual void pop_log_info(const std::string dest = "") = 0;
-	API_ERROR_HANDLERS std::shared_ptr<LogMessage> next_handler;
+	std::shared_ptr<LogMessage> next_handler;
 	API_ERROR_HANDLERS Type type();
 	API_ERROR_HANDLERS std::string message();
 };
